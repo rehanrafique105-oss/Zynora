@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zynora Game</title>
+<title>Zynora - Official Gaming</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 html{
@@ -19,60 +19,106 @@ html{
 }
 
 body{
-    background:#070b14;
+    background:#050914;
     color:white;
+    overflow-x:hidden;
 }
 
+/* NAVBAR */
 nav{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
-    padding:18px 7%;
+    padding:15px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(7,11,20,.92);
-    backdrop-filter:blur(12px);
-    z-index:1000;
+    background:rgba(5,9,20,.9);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(0,234,255,.15);
+    z-index:999;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:3px;
     color:#00eaff;
+    text-shadow:0 0 15px rgba(0,234,255,.7);
 }
 
-nav a{
+.logo img{
+    width:45px;
+    height:45px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
     color:white;
     text-decoration:none;
-    margin-left:25px;
     font-weight:bold;
+    transition:.3s;
 }
 
-nav a:hover{
+.nav-links a:hover{
     color:#00eaff;
 }
 
+/* HERO */
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:120px 20px 60px;
+    padding:130px 20px 70px;
+    position:relative;
     background:
-    radial-gradient(circle at 50% 40%,#123b55 0%,#070b14 55%);
+    radial-gradient(circle at center,#123d55 0%,#07101d 38%,#050914 75%);
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:#00eaff;
+    opacity:.08;
+    filter:blur(100px);
 }
 
 .hero-content{
-    max-width:850px;
+    position:relative;
+    max-width:900px;
+}
+
+.hero-icon{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:25px;
+    margin-bottom:25px;
+    box-shadow:0 0 40px rgba(0,234,255,.5);
 }
 
 .hero h1{
-    font-size:clamp(50px,9vw,100px);
-    letter-spacing:5px;
+    font-size:clamp(55px,10vw,110px);
+    letter-spacing:8px;
     color:#00eaff;
-    text-shadow:0 0 30px #00eaff;
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 30px #00eaff;
 }
 
 .hero h2{
@@ -81,27 +127,29 @@ nav a:hover{
 }
 
 .hero p{
-    color:#b9c5d6;
+    max-width:700px;
+    margin:0 auto 30px;
+    color:#b9c7d8;
     font-size:18px;
     line-height:1.7;
-    margin-bottom:30px;
 }
 
+/* BUTTONS */
 .btn{
     display:inline-block;
-    padding:15px 30px;
+    padding:15px 32px;
+    margin:8px;
     border-radius:30px;
-    background:#00eaff;
-    color:#001018;
     text-decoration:none;
     font-weight:bold;
-    margin:8px;
+    background:#00eaff;
+    color:#001018;
     transition:.3s;
 }
 
 .btn:hover{
     transform:translateY(-4px);
-    box-shadow:0 0 25px #00eaff;
+    box-shadow:0 0 30px rgba(0,234,255,.7);
 }
 
 .btn.secondary{
@@ -110,110 +158,133 @@ nav a:hover{
     border:1px solid #00eaff;
 }
 
+/* SECTIONS */
 section{
     padding:90px 7%;
 }
 
 .title{
     text-align:center;
-    font-size:40px;
-    margin-bottom:45px;
+    font-size:42px;
+    margin-bottom:50px;
 }
 
 .title span{
     color:#00eaff;
 }
 
+/* FEATURES */
 .cards{
+    max-width:1150px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
     gap:25px;
-    max-width:1100px;
-    margin:auto;
 }
 
 .card{
-    background:#101827;
-    border:1px solid #1d3348;
-    padding:30px;
-    border-radius:20px;
+    background:linear-gradient(145deg,#101b2c,#09111e);
+    border:1px solid #1b354b;
+    border-radius:22px;
+    padding:32px 25px;
     text-align:center;
-    transition:.3s;
+    transition:.35s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
     border-color:#00eaff;
-    box-shadow:0 0 25px rgba(0,234,255,.15);
+    box-shadow:0 10px 35px rgba(0,234,255,.15);
 }
 
 .icon{
     font-size:50px;
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .card h3{
     color:#00eaff;
+    font-size:22px;
     margin-bottom:12px;
 }
 
 .card p{
-    color:#aeb9c8;
+    color:#aebdce;
     line-height:1.6;
 }
 
+/* ABOUT */
+.about{
+    background:#08111e;
+}
+
+/* DOWNLOAD */
 .download{
     text-align:center;
-    background:#0b1422;
+    background:
+    radial-gradient(circle at center,#102f42,#050914 70%);
 }
 
 .download-box{
-    max-width:700px;
+    max-width:750px;
     margin:auto;
-    padding:45px 25px;
-    border:1px solid #1d3348;
-    border-radius:25px;
-    background:#101827;
+    padding:50px 25px;
+    border:1px solid #1d4157;
+    border-radius:28px;
+    background:rgba(10,20,34,.8);
 }
 
 .download-box h2{
-    font-size:35px;
+    font-size:40px;
     margin-bottom:15px;
 }
 
 .download-box p{
-    color:#aeb9c8;
+    color:#aebdce;
+    line-height:1.7;
     margin-bottom:25px;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
-    padding:30px;
-    background:#050811;
-    color:#7e8b9c;
+    padding:30px 20px;
+    color:#7d8b9c;
+    background:#03060d;
+    border-top:1px solid #142231;
 }
 
-.menu{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
+/* MOBILE */
 @media(max-width:700px){
-    nav a{
+
+    nav{
+        padding:12px 5%;
+    }
+
+    .nav-links{
         display:none;
     }
 
-    .menu{
-        display:block;
+    .logo{
+        font-size:22px;
     }
 
-    .hero h1{
-        letter-spacing:2px;
+    .logo img{
+        width:38px;
+        height:38px;
     }
 
     section{
         padding:70px 5%;
+    }
+
+    .hero h1{
+        letter-spacing:3px;
+    }
+
+    .hero-icon{
+        width:90px;
+        height:90px;
     }
 }
 </style>
@@ -221,40 +292,64 @@ footer{
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <div class="logo">ZYNORA</div>
 
-    <div>
+    <div class="logo">
+        <img src="zynora-icon.png" alt="Zynora Icon">
+        ZYNORA
+    </div>
+
+    <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#features">Features</a>
         <a href="#about">About</a>
         <a href="#download">Download</a>
     </div>
 
-    <div class="menu">☰</div>
 </nav>
 
+
+<!-- HERO -->
 <section class="hero" id="home">
+
     <div class="hero-content">
+
+        <img
+            class="hero-icon"
+            src="zynora-icon.png"
+            alt="Zynora Game Icon"
+        >
 
         <h1>ZYNORA</h1>
 
-        <h2>Enter the Battle. Become the Legend.</h2>
+        <h2>ENTER THE BATTLE</h2>
 
         <p>
-            Welcome to Zynora — an action-packed mobile gaming experience
-            built for players who want speed, strategy and intense battles.
+            Experience a new generation of mobile gaming.
+            Fight, drive, explore and become the ultimate legend
+            in the world of Zynora.
         </p>
 
-        <a class="btn" href="#download">DOWNLOAD GAME</a>
-        <a class="btn secondary" href="#features">EXPLORE</a>
+        <a class="btn" href="#download">
+            PLAY NOW
+        </a>
+
+        <a class="btn secondary" href="#features">
+            EXPLORE GAME
+        </a>
 
     </div>
+
 </section>
 
+
+<!-- FEATURES -->
 <section id="features">
 
-    <h2 class="title">GAME <span>FEATURES</span></h2>
+    <h2 class="title">
+        GAME <span>FEATURES</span>
+    </h2>
 
     <div class="cards">
 
@@ -262,8 +357,8 @@ footer{
             <div class="icon">⚔️</div>
             <h3>Epic Battles</h3>
             <p>
-                Fight against opponents and prove your skills
-                in exciting combat.
+                Enter intense battles and use your skills
+                to defeat your opponents.
             </p>
         </div>
 
@@ -271,8 +366,8 @@ footer{
             <div class="icon">🏎️</div>
             <h3>Fast Vehicles</h3>
             <p>
-                Explore the battlefield with powerful and
-                fast vehicles.
+                Drive powerful vehicles and explore
+                the battlefield at high speed.
             </p>
         </div>
 
@@ -280,8 +375,8 @@ footer{
             <div class="icon">🎯</div>
             <h3>Smart Strategy</h3>
             <p>
-                Use your strategy, movement and skills
-                to dominate the battlefield.
+                Plan your moves, master the battlefield
+                and play smarter than your enemies.
             </p>
         </div>
 
@@ -289,17 +384,22 @@ footer{
             <div class="icon">🌎</div>
             <h3>Open World</h3>
             <p>
-                Discover new areas and experience an
-                exciting gaming world.
+                Explore a massive world filled with
+                challenges and adventures.
             </p>
         </div>
 
     </div>
+
 </section>
 
-<section id="about">
 
-    <h2 class="title">ABOUT <span>ZYNORA</span></h2>
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <h2 class="title">
+        ABOUT <span>ZYNORA</span>
+    </h2>
 
     <div class="cards">
 
@@ -307,8 +407,8 @@ footer{
             <div class="icon">🔥</div>
             <h3>Made for Gamers</h3>
             <p>
-                Zynora is designed to bring an exciting
-                action experience to mobile gamers.
+                Zynora is created for players who love
+                action, competition and adventure.
             </p>
         </div>
 
@@ -316,8 +416,8 @@ footer{
             <div class="icon">🚀</div>
             <h3>Built for Action</h3>
             <p>
-                Fast gameplay, powerful vehicles and
-                competitive battles.
+                Fast gameplay, exciting missions and
+                an unforgettable gaming experience.
             </p>
         </div>
 
@@ -325,42 +425,59 @@ footer{
             <div class="icon">🏆</div>
             <h3>Become a Legend</h3>
             <p>
-                Improve your skills and become one of
-                the strongest players.
+                Improve your skills, win battles and
+                rise to the top.
             </p>
         </div>
 
     </div>
+
 </section>
 
+
+<!-- DOWNLOAD -->
 <section class="download" id="download">
 
     <div class="download-box">
 
-        <h2>Ready to Play?</h2>
+        <h2>READY TO PLAY?</h2>
 
         <p>
-            Zynora is coming soon. Stay connected for
-            the official game release.
+            Zynora is coming soon.
+            Stay connected for the official release.
         </p>
 
-        <a class="btn" href="javascript:void(0)"
-           onclick="comingSoon()">
-           COMING SOON
+        <a
+            class="btn"
+            href="javascript:void(0)"
+            onclick="comingSoon()"
+        >
+            DOWNLOAD ZYNORA
         </a>
 
     </div>
 
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-    © 2026 Zynora Game. All Rights Reserved.
+
+    © 2026 Zynora Game — All Rights Reserved.
+
 </footer>
 
+
 <script>
+
 function comingSoon(){
-    alert("Zynora is coming soon! 🚀");
+
+    alert(
+        "Zynora is coming soon! 🚀"
+    );
+
 }
+
 </script>
 
 </body>
