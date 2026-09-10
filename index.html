@@ -1,1 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Zynora Game</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#070b14;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(7,11,20,.92);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#00eaff;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00eaff;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 60px;
+    background:
+    radial-gradient(circle at 50% 40%,#123b55 0%,#070b14 55%);
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:clamp(50px,9vw,100px);
+    letter-spacing:5px;
+    color:#00eaff;
+    text-shadow:0 0 30px #00eaff;
+}
+
+.hero h2{
+    font-size:clamp(22px,4vw,40px);
+    margin:15px 0;
+}
+
+.hero p{
+    color:#b9c5d6;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    border-radius:30px;
+    background:#00eaff;
+    color:#001018;
+    text-decoration:none;
+    font-weight:bold;
+    margin:8px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 25px #00eaff;
+}
+
+.btn.secondary{
+    background:transparent;
+    color:white;
+    border:1px solid #00eaff;
+}
+
+section{
+    padding:90px 7%;
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:45px;
+}
+
+.title span{
+    color:#00eaff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:#101827;
+    border:1px solid #1d3348;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00eaff;
+    box-shadow:0 0 25px rgba(0,234,255,.15);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#00eaff;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#aeb9c8;
+    line-height:1.6;
+}
+
+.download{
+    text-align:center;
+    background:#0b1422;
+}
+
+.download-box{
+    max-width:700px;
+    margin:auto;
+    padding:45px 25px;
+    border:1px solid #1d3348;
+    border-radius:25px;
+    background:#101827;
+}
+
+.download-box h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.download-box p{
+    color:#aeb9c8;
+    margin-bottom:25px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#050811;
+    color:#7e8b9c;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+@media(max-width:700px){
+    nav a{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero h1{
+        letter-spacing:2px;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">ZYNORA</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#download">Download</a>
+    </div>
+
+    <div class="menu">☰</div>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <h1>ZYNORA</h1>
+
+        <h2>Enter the Battle. Become the Legend.</h2>
+
+        <p>
+            Welcome to Zynora — an action-packed mobile gaming experience
+            built for players who want speed, strategy and intense battles.
+        </p>
+
+        <a class="btn" href="#download">DOWNLOAD GAME</a>
+        <a class="btn secondary" href="#features">EXPLORE</a>
+
+    </div>
+</section>
+
+<section id="features">
+
+    <h2 class="title">GAME <span>FEATURES</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">⚔️</div>
+            <h3>Epic Battles</h3>
+            <p>
+                Fight against opponents and prove your skills
+                in exciting combat.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏎️</div>
+            <h3>Fast Vehicles</h3>
+            <p>
+                Explore the battlefield with powerful and
+                fast vehicles.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>Smart Strategy</h3>
+            <p>
+                Use your strategy, movement and skills
+                to dominate the battlefield.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌎</div>
+            <h3>Open World</h3>
+            <p>
+                Discover new areas and experience an
+                exciting gaming world.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+
+    <h2 class="title">ABOUT <span>ZYNORA</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🔥</div>
+            <h3>Made for Gamers</h3>
+            <p>
+                Zynora is designed to bring an exciting
+                action experience to mobile gamers.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Built for Action</h3>
+            <p>
+                Fast gameplay, powerful vehicles and
+                competitive battles.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏆</div>
+            <h3>Become a Legend</h3>
+            <p>
+                Improve your skills and become one of
+                the strongest players.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="download" id="download">
+
+    <div class="download-box">
+
+        <h2>Ready to Play?</h2>
+
+        <p>
+            Zynora is coming soon. Stay connected for
+            the official game release.
+        </p>
+
+        <a class="btn" href="javascript:void(0)"
+           onclick="comingSoon()">
+           COMING SOON
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Zynora Game. All Rights Reserved.
+</footer>
+
+<script>
+function comingSoon(){
+    alert("Zynora is coming soon! 🚀");
+}
+</script>
+
+</body>
+</html>
